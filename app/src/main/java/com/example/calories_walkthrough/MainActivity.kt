@@ -98,13 +98,17 @@ fun GenderChoice(male: Boolean, setGenderMale: (Boolean) -> Unit){
     Column(Modifier.selectableGroup()) {
         Row(verticalAlignment = Alignment.CenterVertically){
             RadioButton(selected = male, onClick = { setGenderMale(true) })
+            Text(text = "Male")
         }
-        Text(text = "Male")
+
+        Row(verticalAlignment = Alignment.CenterVertically){
+            RadioButton(selected = !male, onClick = { setGenderMale(false) })
+            Text(text = "Female")
+        }
+
     }
-    Row(verticalAlignment = Alignment.CenterVertically){
-        RadioButton(selected = !male, onClick = { setGenderMale(false) })
-    }
-    Text(text = "Female")
+
+
 }
 
 @Composable
